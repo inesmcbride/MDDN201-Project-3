@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> ParkMe
+  </title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="LoginStyle.css">
+  <link rel="stylesheet" href="bootstrap-social.css">
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+</head>
+
+<body class="pushmenu-push" id="loginDiv">
+  <div class="container-fluid">
+    <header>
+      <div class="row text-center">
+        <a class="Title" href=index.html> ParkMe <a>
+          <div class="row">
+            <img class="car" src="images/car.png">
+          </div>
+        </div>
+
+        <div class="row">
+          <nav class="pushmenu pushmenu-left">
+            <h3> ParkMe </h3>
+            <img id="smallCar" src="images/car.png">
+            <ul class="links">
+              <li><a href="index.html">Find a park</a></li>
+              <li><a href="Login.html">Login</a></li>
+              <li><a href="About.html">About</a></li>
+              <li id="li2"><i class="fa fa-facebook-square fa-3x" style="color: #3b5998"></i><br>
+                <i class="fa fa-twitter-square fa-3x" style="color: #1da1f2"></i></li>
+              </ul>
+            </nav>
+
+            <div id="nav_list">
+              <img src="images/HamburgerMenu.png" width="30px" height="auto"/>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="form-group loginForm">
+        <form class="signIn">
+          <h2 class="signInHeading"> Sign In </h2>
+          <label for="inputEmail" class="inputLabel"> Email Address </label>
+          <input type="email" class="form-control" placeholder="Email Address" required autofocus>
+          <label for="inputPassword" class="inputLabel"> Password </label>
+          <input type="password" class="form-control" placeholder="Password" required>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Remember Me"> Remember Me </label>
+            </div>
+            <button class="btn btn-md btn-default btnSignIn" type="submit"> Sign In </button>
+            <a class="btn btn-md btn-social btn-facebook">
+                <i class="fa fa-facebook" aria-hidden="true"> </i>
+                Sign in with Facebook
+              </a>
+
+          </form>
+        </div>
+
+        <script>
+        $(document).ready(function() {
+          $menuLeft = $('.pushmenu-left');
+          $nav_list = $('#nav_list');
+
+          $nav_list.click(function() {
+            $(this).toggleClass('active');
+            $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+            $menuLeft.toggleClass('pushmenu-open');
+          });
+        });
+        </script>
+
+      </body>
+
+      </html>

@@ -1,0 +1,549 @@
+/*Push Menu sourced from
+http://www.jqueryscript.net/menu/Left-to-right-Push-Menu-With-jQuery-CSS3.html
+Social Media icons sourced from
+https://lipis.github.io/bootstrap-social/
+http://fontawesome.io/*/
+
+body{
+  margin:0;
+  padding:0;
+  font-family: seravek;
+}
+header {
+  height:140px;
+}
+header p {
+  padding-left: 40px;
+}
+p{
+  margin: 5px;
+}
+
+#map{
+  margin: 20px;
+  max-width: none;
+  min-width: 0px;
+  height: 450px;
+}
+
+#mainMap{
+  background-image: url(images/backgroundMap.png);
+  background-position: 0px 1200px;
+}
+
+#aboutDiv{
+  background-image: url(images/backgroundMap3.png);
+  background-position: -5px 1200px;
+}
+
+#loginDiv{
+  background-image: url(images/backgroundMap2.png);
+  background-position: -5px 1200px;
+
+}
+
+.geo{
+  margin-left: 40px;
+}
+#findAPark{
+  cursor: pointer;
+}
+
+#searchInput{
+  position: absolute;
+  z-index: 1;
+}
+
+.containerTwo{
+  /*position: absolute;*/
+  z-index: -1;
+  text-align: center;
+}
+
+.containerThree{
+  z-index: -2;
+  text-align: center;
+}
+
+p#ordered:hover{
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.search:hover {
+  color: #45d0e3;
+  background-color: white;
+}
+
+.container-fluid{
+  background-color: #45d0e3;
+  background-image: url(images/blue.png);
+  background-size: 100% 140px;
+  background-position: center;
+}
+
+.Title, .Title:active, .Title:hover{
+  color:black;
+  font-size: 60px;
+  font-family: anson, helvetica;
+  text-decoration: none;
+  margin-right: 20%;
+  border-bottom: 8px solid black;
+}
+
+.inputLabel{
+  margin-top: 20px;
+}
+
+.btn-social{
+  margin-top: 20px;
+}
+
+.form-control{
+  height: 40px;
+  font-size: 18px;
+}
+
+.pushmenu {
+  background: rgb(210, 248, 253);
+  text-align: center;
+  width: 250px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+  position: fixed;
+}
+
+.pushmenu h3 {
+  color: black;
+  font-family: anson, arial, helvetica;
+  font-size: 40px;
+  font-weight: 400;
+  text-decoration: underline;
+  padding: 25px 25px;
+  margin: 0;
+  background-image: url(images/blue2.png);
+  background-position: center;
+  background-size: 100% 140px;
+  height: 140px;
+}
+
+.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 25%;
+  width: 50%;
+}
+
+.links li { margin-top: 30px; }
+
+.links li a {
+  position: relative;
+  display: block;
+  color: black;
+  font-size: 1.3em;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 14px;
+}
+
+.links #li2 a {
+  font-size: 0.8em;
+}
+
+.links li a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20px;
+  bottom: -5px;
+  width: 0;
+  height: 4px;
+  background-color: rgba(0,0,0,0.7);
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.links #li2 a:after {
+  height: 0px;
+}
+
+.links li a:hover:after { width: 70%; }
+
+.links li a:active { color: rgba(0,0,0,0.7); }
+
+.pushmenu-left { left: -250px; }
+
+.pushmenu-left.pushmenu-open { left: 0; }
+
+.pushmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.pushmenu-push-toright { left: 250px; }
+
+.pushmenu, .pushmenu-push {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#nav_list {
+  margin-left: 40px;
+  margin-top: -130px;
+  cursor: pointer;
+}
+
+.form-group{
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 15%;
+}
+
+.loginForm{
+  background-color: white;
+  border: 2px dotted black;
+  padding: 20px 50px 50px 30px;
+}
+
+.signInHeading{
+  font-size: 20px;
+}
+
+.btnSignIn{
+    margin-top: 20px;
+}
+
+.btnSignIn:hover{
+  color: #45d0e3;
+  background-color: white;
+}
+
+.btn-facebook{
+  margin-left: 30px;
+}
+
+.sortResults, .streetName{
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.streetResults, .directionResults{
+  margin-bottom: 20px;
+  max-height: 275px;
+  overflow: scroll;
+}
+
+.directionResults{
+  padding-left: 50%;
+}
+
+.streetName{
+  font-size: 24px;
+}
+
+.sortResults, .streetResults, .streetName, .directionResults, .aboutSection, .streetResults1, .directionResults1{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+  border: 2px dotted black;
+}
+
+.aboutSection{
+  margin-bottom: 20px;
+  padding-top: 5%;
+  background-color: white;
+}
+
+.map{
+  display: block;
+  margin: auto;
+}
+
+.two{
+  text-align: center;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  header {
+    height:160px;
+  }
+  .container-fluid{
+    background-size: 100% 160px;
+  }
+  signInHeading{
+    font-size: 26px;
+  }
+  .search{
+    btn-lg;
+  }
+
+  .car{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    left: 65%;
+    top: 58px;
+  }
+  .aboutSection{
+    margin-top: 168px;
+  }
+  .carLogo{
+    width: 290px;
+    height: auto;
+    position: absolute;
+    left: 720px;
+    top: 223px;
+  }
+  .two{
+    margin-top: 20px;
+  }
+  .line{
+    width: 70%;
+  }
+  .streetName{
+    font-size: 28px;
+  }
+  .directionResults p{
+    font-size: 24px;
+  }
+  .pushmenu {
+    width: 300px;
+  }
+  .pushmenu-left { left: -300px; }
+  .pushmenu-push-toright { left: 300px; }
+  #nav_list {
+    margin-left: 15px;
+    margin-top: 30px;
+  }
+  .links #li2 { margin-top: 125px}
+  .pushmenu h3 {
+    height: 160px;
+    background-size: 100% 160px;
+  }
+  #smallCar{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 10%;
+    top: 118px;
+  }
+  .streetResults1, .directionResults1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-height: 600px;
+    overflow-y: scroll;
+  }
+  .map{
+    margin-top: 40px;
+  }
+  .top{
+    margin-top: 40px;
+  }
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  h1{
+    color:blue;
+  }
+  .signInHeading{
+    font-size: 22px;
+  }
+  .search{
+    btn-lg;
+  }
+  .car{
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 65%;
+    top: 60px;
+  }
+  .aboutSection{
+    margin-top: 168px;
+  }
+  .carLogo{
+    width: 280px;
+    height: auto;
+    position: absolute;
+    left: 530px;
+    top: 203px;
+  }
+  .two{
+    margin-top: 20px;
+  }
+  .line{
+    width: 70%;
+  }
+  .pushmenu {
+    width: 300px;
+  }
+  .pushmenu-left { left: -300px; }
+  .pushmenu-push-toright { left: 300px; }
+  #nav_list {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .links #li2 { margin-top: 260px}
+  #smallCar{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 10%;
+    top: 100px;
+  }
+  .streetResults1, .directionResults1{
+    margin-top: 20px;
+    max-height: 460px;
+    overflow-y: scroll;
+  }
+  .directionResults1{
+  margin-top: 20px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.map{
+  margin-top: 40px;
+}
+.top{
+  margin-top: 40px;
+}
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .car{
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 65%;
+    top: 58px;
+  }
+  .aboutSection{
+    margin-top: 168px;
+  }
+  .carLogo{
+    width: 240px;
+    height: auto;
+    position: absolute;
+    left: 400px;
+    top: 203px;
+  }
+  .line{
+    width: 50%;
+  }
+  #nav_list {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .links #li2 { margin-top: 495px}
+  #smallCar{
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: 10%;
+    top: 110px;
+  }
+  .directionResults .adp{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .car{
+    width: 140px;
+    height: auto;
+    position: absolute;
+    left: 65%;
+    top: 69px;
+  }
+  .aboutSection{
+    margin-top: 157px;
+  }
+  .carLogo{
+    width: 190px;
+    height: auto;
+    position: absolute;
+    left: 400px;
+    top: 215px;
+  }
+  .line{
+    width: 55%;
+  }
+  #nav_list {
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .links #li2 { margin-top: 10px}
+  #smallCar{
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: 10%;
+    top: 110px;
+  }
+  .directionResults .adp{
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .car{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    left: 65%;
+    top: 89px;
+  }
+  .aboutSection{
+    margin-top: 97px;
+  }
+  .carLogo{
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 160px;
+    top: 170px;
+  }
+  .line{
+    width: 80%;
+  }
+  #nav_list {
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .links #li2 { margin-top: 142px}
+
+  #smallCar{
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: 10%;
+    top: 110px;
+  }
+  .btn-facebook{
+    margin-left: 0px;
+  }
+  .directionResults .adp{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+
+}

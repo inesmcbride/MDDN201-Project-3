@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> ParkMe
+  </title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="LoginStyle.css">
+</head>
+
+<body class="pushmenu-push" id="aboutDiv">
+  <div class="container-fluid">
+    <header>
+      <div class="row text-center">
+        <a class="Title" href=index.html> ParkMe <a>
+        </div>
+        <div class="row">
+          <nav class="pushmenu pushmenu-left">
+            <h3> ParkMe </h3>
+            <img id="smallCar" src="images/car.png">
+            <ul class="links">
+              <li><a href="index.html">Find a park</a></li>
+              <li><a href="Login.html">Login</a></li>
+              <li><a href="About.html">About</a></li>
+              <li id="li2"><i class="fa fa-facebook-square fa-3x" style="color: #3b5998"></i><br>
+                <i class="fa fa-twitter-square fa-3x" style="color: #1da1f2"></i></li>
+              </ul>
+            </nav>
+
+            <div id="nav_list">
+              <img src="images/HamburgerMenu.png" width="30px" height="auto"/>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="container two">
+        <div class="row">
+          <img class="carLogo" src="images/car.png">
+          <div class="text-left aboutSection">
+            <p> PARKME is a system designed to help users find available car parks in their preferred
+              location and to take the stress out of finding a carpark.<br>
+              ParkMe aims to save users valuable time by cutting out the time wasted while
+              driving around in circles searching for a place to park<br><br>
+              Whether you are a new driver, experienced driver, passenger or co-pilot, ParkMe is designed
+              to be used byeveryone. With an easy to use interface and voice automated directions,
+              ParkMe can be used to facilitate the search for a car park in any location.<br><br>
+              Using real-time tracking technologies to guide users to an available carpark, users
+              will be able to search for parks in any location they choose, sorting the results
+              by proximity, the cost of the car park or the parks time limit before choosing
+              their preferred park and receiveing directions with the choice of voice
+              automated guidance.</p>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        $(document).ready(function() {
+          $menuLeft = $('.pushmenu-left');
+          $nav_list = $('#nav_list');
+
+          $nav_list.click(function() {
+            $(this).toggleClass('active');
+            $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+            $menuLeft.toggleClass('pushmenu-open');
+          });
+        });
+        </script>
+      </body>
+
+      </html>
