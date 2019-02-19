@@ -283,6 +283,8 @@ p#ordered:hover{
   }
   .search{
     btn-lg;
+    background-color: white;
+    border: 2px #CDCDCD solid;
   }
 
   .car{
